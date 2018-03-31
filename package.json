@@ -1,0 +1,23 @@
+{
+  "name": "sori_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "npm": "^5.8.0",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express-rate-limit": "^2.11.0",
+    "express-secure-only": "^0.2.1",
+    "indico.io": "^0.10.5",
+    "vcap_services": "^0.3.4",
+    "watson-developer-cloud": "^3.2.1",
+    "watson-speech": "^0.34.1"
+  }
+}
