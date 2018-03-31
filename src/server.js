@@ -12,9 +12,10 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(__dirname + '/static'));
 app.use(cors());
 
-indico.apiKey =  'd49fe2485c1ab5e357e3662e921f498d';
-const watson_id = '9020fa55-d2ba-4aa2-8ac9-75e2861b097a';
-const watson_pw = 'j1nHAbDNKQWU';
+indico.apiKey = process.env.indico_key;
+// indico.apiKey =  'd49fe2485c1ab5e357e3662e921f498d';
+// const watson_id = '9020fa55-d2ba-4aa2-8ac9-75e2861b097a';
+// const watson_pw = 'j1nHAbDNKQWU';
 
 app.post('/indico/personas', (req, res) => {
   // console.log("connected to indico and your request body is...", req.body.text);
@@ -49,8 +50,8 @@ if (process.env.VCAP_SERVICES) {
 var sttAuthService = new watson.AuthorizationV1(
   Object.assign(
     {
-      username: watson_id, // process.env.SPEECH_TO_TEXT_USERNAME, // or hard-code credentials here
-      password: watson_pw //process.env.SPEECH_TO_TEXT_PASSWORD
+      username: process.env.watson_id, // process.env.SPEECH_TO_TEXT_USERNAME, // or hard-code credentials here
+      password: process.env.watson_pw //process.env.SPEECH_TO_TEXT_PASSWORD
     },
     vcapServices.getCredentials('speech_to_text') // pulls credentials from environment in bluemix, otherwise returns {}
   )
