@@ -2,9 +2,10 @@
   "name": "sori_api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -19,5 +20,8 @@
     "vcap_services": "^0.3.4",
     "watson-developer-cloud": "^3.2.1",
     "watson-speech": "^0.34.1"
+  },
+  "engines": {
+    "node": "8.9.4"
   }
 }
