@@ -11,11 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(__dirname + '/static'));
 app.use(cors());
-
 indico.apiKey = process.env.indico_key;
-// indico.apiKey =  'd49fe2485c1ab5e357e3662e921f498d';
-// const watson_id = '9020fa55-d2ba-4aa2-8ac9-75e2861b097a';
-// const watson_pw = 'j1nHAbDNKQWU';
 
 app.post('/indico/personas', (req, res) => {
   // console.log("connected to indico and your request body is...", req.body.text);
