@@ -2,10 +2,10 @@
 const profile = require('npm-profile')
 const npm = require('./npm.js')
 const output = require('./utils/output.js')
-const Table = require('cli-table2')
+const Table = require('cli-table3')
 const Bluebird = require('bluebird')
-const isCidrV4 = require('is-cidr').isCidrV4
-const isCidrV6 = require('is-cidr').isCidrV6
+const isCidrV4 = require('is-cidr').v4
+const isCidrV6 = require('is-cidr').v6
 const readUserInfo = require('./utils/read-user-info.js')
 const ansistyles = require('ansistyles')
 const log = require('npmlog')
@@ -164,7 +164,7 @@ function rm (args) {
       return profile.removeToken(key, conf).catch((ex) => {
         if (ex.code !== 'EOTP') throw ex
         log.info('token', 'failed because revoking this token requires OTP')
-        return readUserInfo.otp('Authenticator provided OTP:').then((otp) => {
+        return readUserInfo.otp().then((otp) => {
           conf.auth.otp = otp
           return profile.removeToken(key, conf)
         })
@@ -192,7 +192,7 @@ function create (args) {
     return profile.createToken(password, readonly, validCIDR, conf).catch((ex) => {
       if (ex.code !== 'EOTP') throw ex
       log.info('token', 'failed because it requires OTP')
-      return readUserInfo.otp('Authenticator provided OTP:').then((otp) => {
+      return readUserInfo.otp().then((otp) => {
         conf.auth.otp = otp
         log.info('token', 'creating with OTP')
         return pulseTillDone.withPromise(profile.createToken(password, readonly, validCIDR, conf))

@@ -13,6 +13,11 @@ app.use(express.static(__dirname + '/static'));
 app.use(cors());
 indico.apiKey = process.env.indico_key;
 
+app.get('/', (req, res)=> {
+  const response = "I got you";
+  res.send(response)
+})
+
 app.post('/indico/personas', (req, res) => {
   // console.log("connected to indico and your request body is...", req.body.text);
   indico.personas(req.body.text)
