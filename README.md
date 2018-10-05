@@ -3,7 +3,7 @@
 
 It's a simple web app that recognizes speech and gives a response with his/her personality. It's built with React.js, Watson's speech recognizing api and Indico's personality analyzing api.
 
-* [Sori](https://github.com/april9288/sori) - The speech recognition web app built with React.js. Just give it a try. It's fun to see my personality with my speech.
+* [Sori](https://april9288.github.io/sori/) - The speech recognition web app built with React.js. Just give it a try. It's fun to see my personality with my speech.
 * [Frontend Repository](https://github.com/april9288/sori) - Click the link to see the frontend repository.
 
 ## Built With
