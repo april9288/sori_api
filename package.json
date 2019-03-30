@@ -1,6 +1,6 @@
 {
   "name": "sori_api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "It's a backend server for Sori web app",
   "main": "server.js",
   "scripts": {
@@ -10,16 +10,15 @@
   "author": "James Jongho Kim",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "cors": "^2.8.4",
-    "express": "^4.16.3",
-    "express-rate-limit": "^2.11.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "express-rate-limit": "^2.14.2",
     "express-secure-only": "^0.2.1",
     "indico.io": "^0.10.5",
-    "npm": "^6.4.1",
     "vcap_services": "^0.3.4",
-    "watson-developer-cloud": "^3.2.1",
-    "watson-speech": "^0.34.1"
+    "watson-developer-cloud": "^3.18.4",
+    "watson-speech": "^0.34.2"
   },
   "engines": {
     "node": "8.9.4"
